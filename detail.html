@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Details Page</title>
+</head>
+<body>
+  <h1>Enter Data</h1>
+  <input type="text" id="fullname" placeholder="Full Name">
+  <input type="text" id="email" placeholder="Email">
+  <button onclick="storeData()">Store Data</button>
+
+  <script>
+    function storeData() {
+      // Get value from input field
+      var dataname = document.getElementById('fullname').value;
+      var dataemail = document.getElementById('email').value;
+      // Store data in localStorage under key 'myData'
+      localStorage.setItem('name', dataname);
+      localStorage.setItem('email', dataemail);
+      alert("Data stored!");
+    }
+  </script>
+</body>
+</html>

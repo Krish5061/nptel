@@ -9,6 +9,9 @@
   <input type="text" id="email" placeholder="Email">
   <button onclick="storeData()">Store Data</button>
 
+  <!-- New Button to Go to Root Directory -->
+  <button onclick="goToRoot()">Go to Home</button>
+
   <script>
     function storeData() {
       // Get value from input field
@@ -18,6 +21,11 @@
       localStorage.setItem('name', dataname);
       localStorage.setItem('email', dataemail);
       alert("Data stored!");
+    }
+
+    // Function to go to the root directory
+    function goToRoot() {
+      window.location.href = '/';  // Navigates to the root directory
     }
   </script>
 </body>

@@ -12,54 +12,10 @@
                     gtag('js', new Date());
                     gtag('config', 'G-4FM68DFLTL');
         </script>
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                // Retrieve stored values (or use defaults if not set)
-                var storedName = localStorage.getItem('name') || 'No data found.';
-                var storedEmail = localStorage.getItem('email') || 'No data found.';
-            
-                // --- Update the table values ---
-                // Select the table by its class
-                var table = document.querySelector('.table_progress_info');
-                if (table) {
-                    // Loop through all rows in the table
-                    var rows = table.getElementsByTagName('tr');
-                    for (var i = 0; i < rows.length; i++) {
-                        var th = rows[i].querySelector('th');
-                        var td = rows[i].querySelector('td');
-                        if (th && td) {
-                            var headerText = th.textContent.trim().toLowerCase();
-                            if (headerText === 'name') {
-                                td.innerText = storedName;
-                            } else if (headerText === 'email') {
-                                td.innerText = storedEmail;
-                            }
-                        }
-                    }
-                }
-            
-                // --- Update the dropdown link's email ---
-                // Find the anchor element with class "dropdown-toggle"
-                var dropdownLink = document.querySelector('.dropdown-toggle');
-                if (dropdownLink) {
-                    // Loop through its child nodes to find the text node containing the email.
-                    for (var i = 0; i < dropdownLink.childNodes.length; i++) {
-                        var node = dropdownLink.childNodes[i];
-                        if (node.nodeType === Node.TEXT_NODE) { // Text node
-                            // Update the text node with the stored email followed by a space (to separate from the icon)
-                            node.nodeValue = storedEmail + " ";
-                            break;
-                        }
-                    }
-                }
-            });
-            </script>
-            
-            
     
     <!-- Comment : PWA entry point seized below, this will redirect app to PWA -->
     <!--<script type="text/jscript" src="/modules/explorer/_static/js/mobile_redirect.js" charset="utf-8"></script>-->
-    <base href="https://onlinecourses.nptel.ac.in/noc25_cs60/" />
+    <base href="https://onlinecourses.nptel.ac.in/noc26_cs58/" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="icon" href="https://storage.googleapis.com/swayam2-node/assets/img/favicon.ico"/>
     <link rel="apple-touch-icon" sizes="152x152" href="https://storage.googleapis.com/swayam2-node/assets/img/swayam_images/ico/152x152.png">
@@ -69,7 +25,7 @@
     <meta charset="utf-8">
     
   <title>
-    Python for Data Science -
+    Data Mining -
     
   
   Course Progress
@@ -83,6 +39,87 @@
 
     <!-- The following translated strings are used in activity-generic.js and should be
     declared before that file is imported. -->
+<script>
+/* =========================================================
+   Copy / Paste Protection + Warning Popup
+   ========================================================= */
+document.addEventListener("DOMContentLoaded", function () {
+
+/* Detect assessment or programming assignment via query param */
+var params = new URLSearchParams(window.location.search);
+var isAssessment =
+  params.has("assessment") || params.has("progassignment");
+
+if (!isAssessment) {
+  return;
+}
+
+  var warningVisible = false;
+  var popup = document.getElementById("cpWarning");
+
+  function showCpWarning() {
+    if (warningVisible || !popup) return;
+    warningVisible = true;
+    popup.style.display = "block";
+  }
+
+  window.hideCpWarning = function () {
+    if (!popup) return;
+    popup.style.display = "none";
+    warningVisible = false;
+  };
+
+  function emitWarning() {
+    window.dispatchEvent(new CustomEvent("copy-paste-blocked"));
+    showCpWarning();
+  }
+
+  /* Right‑click */
+  document.addEventListener("contextmenu", function (e) {
+    e.preventDefault();
+    emitWarning();
+  });
+
+  /* Clipboard */
+  ["copy", "cut", "paste"].forEach(function (evt) {
+    document.addEventListener(evt, function (e) {
+      e.preventDefault();
+      emitWarning();
+    });
+  });
+
+  /* Keyboard shortcuts */
+  document.addEventListener("keydown", function (e) {
+    var isMac = navigator.platform &&
+      navigator.platform.toUpperCase().includes("MAC");
+    var ctrlOrCmd = isMac ? e.metaKey : e.ctrlKey;
+    var key = (e.key || "").toLowerCase();
+
+    if (ctrlOrCmd && ["c", "x", "v"].includes(key)) {
+      e.preventDefault();
+      e.stopPropagation();
+      emitWarning();
+      return;
+    }
+
+    if (ctrlOrCmd && ["u", "s", "p"].includes(key)) {
+      e.preventDefault();
+      e.stopPropagation();
+      emitWarning();
+      return;
+    }
+
+    if (
+      e.key === "F12" ||
+      (ctrlOrCmd && e.shiftKey && ["i", "j", "k"].includes(key))
+    ) {
+      e.preventDefault();
+      e.stopPropagation();
+      emitWarning();
+    }
+  });
+});
+</script>
     <script>
       // inline translations
       var trans = {};
@@ -398,8 +435,8 @@ function close_popup(){
     {
       "@context": "http://schema.org",
       "@type": "Course",
-      "@id": "https://onlinecourses.nptel.ac.in/noc25_cs60/",
-      "name": "Python for Data Science",
+      "@id": "https://onlinecourses.nptel.ac.in/noc26_cs58/",
+      "name": "Data Mining",
       "description": "",
       "provider": {
         "@type":"Organization",
@@ -413,7 +450,7 @@ function close_popup(){
       {
         "inLanguage" : "en",
         "audioLanguage" : ["en"],
-        "startDate" : "2025-01-19T18:30:00.000000Z"
+        "startDate" : "2026-01-18T18:30:00.000000Z"
         }
       ],
       
@@ -428,7 +465,7 @@ function close_popup(){
     
 
     <script>
-      var eventXsrfToken = '1743517012/TiOLto4Vj9mRQDkASrL6-Iwk5tV0L62T2Sx-X3LS96I=';
+      var eventXsrfToken = '1775577809/qqh8_EGbNkvaf3xVPfqmPtEgNSk5_JEC3q-Ftas1ojw=';
       
         var gcbCanRecordStudentEvents = true;
       
@@ -509,13 +546,65 @@ function close_popup(){
 
     <div class="gcb-html-hook" id="base-after-body-tag-begins"><!-- base.after_body_tag_begins --></div>
 
+
+    <!-- Copy/Paste Warning Popup -->
+<style>
+  .cp-warning-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: 99999;
+  }
+
+  .cp-warning-popup {
+    background: #fff;
+    max-width: 420px;
+    margin: 15% auto;
+    padding: 20px 25px;
+    border-radius: 6px;
+    text-align: center;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+    font-family: Arial, sans-serif;
+  }
+
+  .cp-warning-popup h3 {
+    margin-top: 0;
+    color: #c62828;
+  }
+
+  .cp-warning-popup button {
+    margin-top: 15px;
+    padding: 6px 15px;
+    border: none;
+    background: #1976d2;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .cp-warning-popup button:hover {
+    background: #125ca1;
+  }
+</style>
+
+<div class="cp-warning-overlay" id="cpWarning">
+  <div class="cp-warning-popup">
+    <h3>Warning</h3>
+    <p>
+      Right click,copy, cut, or paste is not allowed.
+    </p>
+    <button onclick="hideCpWarning()">OK</button>
+  </div>
+</div>
+
     
       <script>
         // Course-Builder specific setup for Google Tag Manager.  Iff
         // Tag Managers is enabled, the values in the dataLayer list of
         // dicts is made available to Tag Manager macros.
         dataLayer = [{
-          'course_title': 'Python for Data Science',
+          'course_title': 'Data Mining',
           'event': 'default',  // Explicit value meaning not-really-set.
           }];
 
@@ -719,7 +808,7 @@ function close_popup(){
                 <!--<a href="https://nptel.ac.in/LocalChapter/">Local Chapters</a>-->
                 <div class="dropdown">
                      
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">vu4f2324069@pvppcoe.ac.in <i class="fa fa-angle-down"></i></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">vu4f2324074@pvppcoe.ac.in <i class="fa fa-angle-down"></i></a>
                         <ul class="dropdown-menu">
                             
 
@@ -765,7 +854,7 @@ function close_popup(){
                             
 
                             <li>
-                                <a href="https://swayamopenid.b2clogin.com/swayamopenid.onmicrosoft.com/B2C_1_swayam2/oauth2/v2.0/logout?post_logout_redirect_uri=https://onlinecourses.nptel.ac.in/wso_logout">
+                                <a href="https://swayam-sso.swayam2.ac.in/firebase_signout?client_id=swayam-node1-production">
                                     <img src="https://storage.googleapis.com/swayam2-node/assets/img/swayam_images/icon_sign_out_normal.png" class="normalimg" alt="Go to Sign out">
                                     <img src="https://storage.googleapis.com/swayam2-node/assets/img/swayam_images/icon_sign_out_selected.png" class="selectedimg" alt="">
                                     SIGN-OUT
@@ -790,7 +879,7 @@ function close_popup(){
 <div id="courseSidenav" class="sidenav visible-xs visible-sm">
   <div id="courseSidenavHeader">
       <a href="javascript:void(0)" class="closebtn" style="color: #ffffff;" onclick="closeNav()">&times;</a>
-      Python for Data Science
+      Data Mining
   </div>
   <div class="gcb-html-hook" id="base-after-navbar-begins"><!-- base.after_navbar_begins --></div>
         <div >
@@ -838,7 +927,7 @@ function close_popup(){
     <div class="gcb-aux">
       <a class="gcb-nav-course-title" href="https://swayam.gov.in/explorer?ncCode=NPTEL">NPTEL</a>
       <span class="gcb-nav-course-title">&raquo;</span>
-      <a class="gcb-nav-course-title" href="course">Python for Data Science</a>
+      <a class="gcb-nav-course-title" href="course">Data Mining</a>
       <div class="gcb-pull-right visible-lg visible-md"><ul class="clearfix">
 
         <!-- left-aligned links in order -->
@@ -943,44 +1032,10 @@ function close_popup(){
 
   
      
-        <div class="gcb-button-toolbar">
-          <a id="exam-registeration-button"
-             class="gcb-button gcb-button-small"
-             href="https://examform.nptel.ac.in/2025_01/exam_form/dashboard"
-             role="button">
-             Click to register for Certification exam
-          </a>
-        </div>
-     
     <br>
      
-        <input type="hidden" name="xsrf_token" id="xsrf_token" value='1743517012/9PBMqe9B8M6tNvppyHhwo9wgfnYozluaNefjmldeuh0='>
-        <button class="gcb-button gcb-button-small" id="submitBtn" onclick="payment_status()"  type="button" data-target="#payment_status" data-toggle="modal" style="width:93%">
-                     If already registered, click to check your payment status
-        </button>
-        <div class="modal" id="payment_status" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-          <div class="modal-dialog modal-sm">
-            <div class="modal-content" id="exam-payment-modalelement">
-              <div class="modal-header text" style="background-color: #993333">
-                <button type="button" class="close" id="exam-payment-close" data-dismiss="modal"
-                  style="color: #ffffff;opacity: 1;font-size: 30px;">&times;
-                </button>
-                  <div class="marginTop10" style="margin-left: 20px">
-                    <h2 class="modal-title marginTop20" style="float: none;color: #ffffff;">
-                      Payment status
-                    </h2>
-                  </div>
-              </div>
-              <div class="modal-body modal-profile-page" style="overflow: hidden; height:55px">
-                <div class="overlay">
-                    <div id="loading-img-popup" title="Loading..."></div>
-                </div>
-                <div id="payment_status_data"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-     
+    
+      
     
   
 
@@ -991,13 +1046,13 @@ function close_popup(){
     
       
         
-          <div class="unit_navbar" id="unit_navbar_128" >
+          <div class="unit_navbar" id="unit_navbar_120" >
   <div  class="unit_heading" 
-    id="unit_heading_128"
-    onclick='toggleSubUnitNavBar("subunit_navbar_128")'><a href="" onclick="javascript:event.preventDefault();">
+    id="unit_heading_120"
+    onclick='toggleSubUnitNavBar("subunit_navbar_120")'><a href="" onclick="javascript:event.preventDefault();">
      About NPTEL </a></div>
     
-      <ul class="subunit_navbar_other" id="subunit_navbar_128">
+      <ul class="subunit_navbar_other" id="subunit_navbar_120">
     
             
               
@@ -1009,13 +1064,13 @@ function close_popup(){
                   
     <li  class="subunit_other" >
   <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
-      <a href="unit?unit=128&lesson=129" id="lesson_129">NPTEL Initiative</a>
+      <a href="unit?unit=120&lesson=121" id="lesson_121">NPTEL Initiative</a>
       
         <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
     alt="Not Started"
     title="Not Started"
     class="gcb-progress-icon"
-    id="progress-state-html-129">
+    id="progress-state-html-121">
 </div>
       
     </div></li>
@@ -1026,6 +1081,14 @@ function close_popup(){
           
           
         
+      
+  
+      
+  
+      
+  
+      
+  
       
   
       
@@ -1350,57 +1413,6 @@ function close_popup(){
                   
     <li  class="subunit_other" >
   <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
-      <a href="unit?unit=1&lesson=10" id="lesson_10">What you should know about the final certification exam</a>
-      
-        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
-    alt="Not Started"
-    title="Not Started"
-    class="gcb-progress-icon"
-    id="progress-state-html-10">
-</div>
-      
-    </div></li>
-    
-  
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-          
-          
-        
-          
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-                  
-    <li  class="subunit_other" >
-  <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
       <a href="unit?unit=1&lesson=7" id="lesson_7">Certification criteria</a>
       
         <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
@@ -1429,12 +1441,12 @@ function close_popup(){
             
                 
             
+                
+            
           
           
         
           
-            
-                
             
                 
             
@@ -1478,12 +1490,12 @@ function close_popup(){
             
                 
             
+                
+            
           
           
         
           
-            
-                
             
                 
             
@@ -1510,6 +1522,57 @@ function close_popup(){
     title="Not Started"
     class="gcb-progress-icon"
     id="progress-state-html-9">
+</div>
+      
+    </div></li>
+    
+  
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+          
+          
+        
+          
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+                  
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
+      <a href="unit?unit=1&lesson=10" id="lesson_10">What you should know about the final certification exam</a>
+      
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-10">
 </div>
       
     </div></li>
@@ -1815,8 +1878,20 @@ function close_popup(){
   
       
   
+      
+  
+      
+  
+      
+  
+      
+  
             
           </ul></div>
+        
+      
+    
+      
         
       
     
@@ -1837,6 +1912,34 @@ function close_popup(){
       
   
       
+  
+      
+        
+          
+          
+            
+                
+                  
+    
+      <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
+    
+          
+            
+            <a href="assessment?name=155" id="assessment_155">Practice: Week 0 : Assignment 0</a>          
+          
+            <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-155">
+</div>
+          
+        </div></li>
+  
+                
+            
+          
         
           
             
@@ -1844,13 +1947,13 @@ function close_popup(){
                   
     <li  class="subunit_other" >
   <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
-      <a href="unit?unit=16&lesson=17" id="lesson_17">Python Setup Guide</a>
+      <a href="unit?unit=16&lesson=161" id="lesson_161">Assignment 0 Solution</a>
       
         <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
     alt="Not Started"
     title="Not Started"
     class="gcb-progress-icon"
-    id="progress-state-html-17">
+    id="progress-state-html-161">
 </div>
       
     </div></li>
@@ -1861,15 +1964,12 @@ function close_popup(){
           
           
         
-          
-          
-            
-                
-                  
-                
-            
-          
-        
+      
+  
+      
+  
+      
+  
       
   
       
@@ -1919,16 +2019,18 @@ function close_popup(){
     
       
         
-          <div class="unit_navbar" id="unit_navbar_18" >
+          <div class="unit_navbar" id="unit_navbar_17" >
   <div  class="unit_heading" 
-    id="unit_heading_18"
-    onclick='toggleSubUnitNavBar("subunit_navbar_18")'><a href="" onclick="javascript:event.preventDefault();">
+    id="unit_heading_17"
+    onclick='toggleSubUnitNavBar("subunit_navbar_17")'><a href="" onclick="javascript:event.preventDefault();">
      Week 1 </a></div>
     
-      <ul class="subunit_navbar_other" id="subunit_navbar_18">
+      <ul class="subunit_navbar_other" id="subunit_navbar_17">
     
             
               
+      
+  
       
   
       
@@ -1945,7 +2047,46 @@ function close_popup(){
                   
     <li  class="subunit_other" >
   <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
-      <a href="unit?unit=18&lesson=19" id="lesson_19">Introduction to Python for Data Science</a>
+      <a href="unit?unit=17&lesson=18" id="lesson_18">Lecture 1 : Introduction, Knowledge Discovery Process</a>
+      
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-18">
+</div>
+      
+    </div></li>
+    
+  
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+          
+          
+        
+          
+            
+                
+            
+                
+                  
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
+      <a href="unit?unit=17&lesson=19" id="lesson_19">Lecture 2 : Data Preprocessing - I</a>
       
         <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
     alt="Not Started"
@@ -1971,14 +2112,6 @@ function close_popup(){
             
                 
             
-                
-            
-                
-            
-                
-            
-                
-            
           
           
         
@@ -1987,10 +2120,12 @@ function close_popup(){
                 
             
                 
+            
+                
                   
     <li  class="subunit_other" >
   <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
-      <a href="unit?unit=18&lesson=20" id="lesson_20">Introduction to Python</a>
+      <a href="unit?unit=17&lesson=20" id="lesson_20">Lecture 3 : Data Preprocessing - II</a>
       
         <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
     alt="Not Started"
@@ -2014,14 +2149,6 @@ function close_popup(){
             
                 
             
-                
-            
-                
-            
-                
-            
-                
-            
           
           
         
@@ -2032,10 +2159,12 @@ function close_popup(){
                 
             
                 
+            
+                
                   
     <li  class="subunit_other" >
   <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
-      <a href="unit?unit=18&lesson=21" id="lesson_21">Introduction to Spyder - Part 1</a>
+      <a href="unit?unit=17&lesson=21" id="lesson_21">Lecture 4: Association Rules</a>
       
         <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
     alt="Not Started"
@@ -2057,14 +2186,6 @@ function close_popup(){
             
                 
             
-                
-            
-                
-            
-                
-            
-                
-            
           
           
         
@@ -2077,10 +2198,12 @@ function close_popup(){
                 
             
                 
+            
+                
                   
     <li  class="subunit_other" >
   <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
-      <a href="unit?unit=18&lesson=22" id="lesson_22">Introduction to Spyder - Part 2</a>
+      <a href="unit?unit=17&lesson=22" id="lesson_22">Lecture 5 : Apriori algorithm</a>
       
         <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
     alt="Not Started"
@@ -2100,14 +2223,6 @@ function close_popup(){
             
                 
             
-                
-            
-                
-            
-                
-            
-                
-            
           
           
         
@@ -2122,10 +2237,12 @@ function close_popup(){
                 
             
                 
+            
+                
                   
     <li  class="subunit_other" >
   <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
-      <a href="unit?unit=18&lesson=23" id="lesson_23">Variables and Datatypes</a>
+      <a href="unit?unit=17&lesson=23" id="lesson_23">Week 1 Lecture Material</a>
       
         <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
     alt="Not Started"
@@ -2143,15 +2260,33 @@ function close_popup(){
             
                 
             
-                
-            
-                
-            
-                
-            
-                
-            
           
+          
+        
+          
+          
+            
+                
+                  
+    
+      <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
+    
+          
+            
+            <a href="assessment?name=156" id="assessment_156">Quiz: Week 1 : Assignment 1</a>          
+          
+            <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-156">
+</div>
+          
+        </div></li>
+  
+                
+            
           
         
           
@@ -2167,10 +2302,12 @@ function close_popup(){
                 
             
                 
+            
+                
                   
     <li  class="subunit_other" >
   <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
-      <a href="unit?unit=18&lesson=24" id="lesson_24">Operators</a>
+      <a href="unit?unit=17&lesson=24" id="lesson_24">Week 1 Feedback Form</a>
       
         <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
     alt="Not Started"
@@ -2186,57 +2323,6 @@ function close_popup(){
             
                 
             
-                
-            
-                
-            
-                
-            
-                
-            
-          
-          
-        
-          
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-                  
-    <li  class="subunit_other" >
-  <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
-      <a href="unit?unit=18&lesson=25" id="lesson_25">Setup Guide</a>
-      
-        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
-    alt="Not Started"
-    title="Not Started"
-    class="gcb-progress-icon"
-    id="progress-state-html-25">
-</div>
-      
-    </div></li>
-    
-  
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
           
           
         
@@ -2260,134 +2346,13 @@ function close_popup(){
                   
     <li  class="subunit_other" >
   <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
-      <a href="unit?unit=18&lesson=26" id="lesson_26">Week 1: Lecture slides</a>
+      <a href="unit?unit=17&lesson=162" id="lesson_162">Assignment 1 Solution</a>
       
         <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
     alt="Not Started"
     title="Not Started"
     class="gcb-progress-icon"
-    id="progress-state-html-26">
-</div>
-      
-    </div></li>
-    
-  
-                
-            
-                
-            
-                
-            
-                
-            
-          
-          
-        
-          
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-                  
-    <li  class="subunit_other" >
-  <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
-      <a href="unit?unit=18&lesson=27" id="lesson_27">Week 1-FAQs</a>
-      
-        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
-    alt="Not Started"
-    title="Not Started"
-    class="gcb-progress-icon"
-    id="progress-state-html-27">
-</div>
-      
-    </div></li>
-    
-  
-                
-            
-                
-            
-                
-            
-          
-          
-        
-          
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-                  
-                
-            
-                
-            
-          
-          
-        
-          
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-                  
-    <li  class="subunit_other" >
-  <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
-      <a href="unit?unit=18&lesson=113" id="lesson_113">Week 1 Feedback Form : Python for Data Science</a>
-      
-        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
-    alt="Not Started"
-    title="Not Started"
-    class="gcb-progress-icon"
-    id="progress-state-html-113">
+    id="progress-state-html-162">
 </div>
       
     </div></li>
@@ -2398,62 +2363,12 @@ function close_popup(){
           
           
         
-          
-          
-            
-                
-                  
-    
-      <li  class="subunit_other" >
-  <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
-    
-          
-            
-            <a href="assessment?name=153" id="assessment_153">Quiz: Week 1 : Assignment 1</a>          
-          
-            <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
-    alt="Not Started"
-    title="Not Started"
-    class="gcb-progress-icon"
-    id="progress-state-153">
-</div>
-          
-        </div></li>
+      
   
-                
-            
-                
-            
-          
-        
-          
-          
-            
-                
-            
-                
-                  
-    
-      <li  class="subunit_other" >
-  <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
-    
-          
-            
-            <a href="assessment?name=156" id="assessment_156">Practice: Week 1: Practice Assignment 1</a>          
-          
-            <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
-    alt="Not Started"
-    title="Not Started"
-    class="gcb-progress-icon"
-    id="progress-state-156">
-</div>
-          
-        </div></li>
+      
   
-                
-            
-          
-        
+      
+  
       
   
       
@@ -2499,16 +2414,18 @@ function close_popup(){
     
       
         
-          <div class="unit_navbar" id="unit_navbar_30" >
+          <div class="unit_navbar" id="unit_navbar_26" >
   <div  class="unit_heading" 
-    id="unit_heading_30"
-    onclick='toggleSubUnitNavBar("subunit_navbar_30")'><a href="" onclick="javascript:event.preventDefault();">
+    id="unit_heading_26"
+    onclick='toggleSubUnitNavBar("subunit_navbar_26")'><a href="" onclick="javascript:event.preventDefault();">
      Week 2 </a></div>
     
-      <ul class="subunit_navbar_other" id="subunit_navbar_30">
+      <ul class="subunit_navbar_other" id="subunit_navbar_26">
     
             
               
+      
+  
       
   
       
@@ -2529,7 +2446,171 @@ function close_popup(){
                   
     <li  class="subunit_other" >
   <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
-      <a href="unit?unit=30&lesson=31" id="lesson_31">Jupyter setup</a>
+      <a href="unit?unit=26&lesson=27" id="lesson_27">Lecture 6: Rule generation</a>
+      
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-27">
+</div>
+      
+    </div></li>
+    
+  
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+          
+          
+        
+          
+            
+                
+            
+                
+                  
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
+      <a href="unit?unit=26&lesson=28" id="lesson_28">Lecture 7: Classification</a>
+      
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-28">
+</div>
+      
+    </div></li>
+    
+  
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+          
+          
+        
+          
+            
+                
+            
+                
+            
+                
+                  
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
+      <a href="unit?unit=26&lesson=29" id="lesson_29">Lecture 8: Decision Tree - I</a>
+      
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-29">
+</div>
+      
+    </div></li>
+    
+  
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+          
+          
+        
+          
+            
+                
+            
+                
+            
+                
+            
+                
+                  
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
+      <a href="unit?unit=26&lesson=30" id="lesson_30">Lecture 9: Decision Tree - II</a>
+      
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-30">
+</div>
+      
+    </div></li>
+    
+  
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+          
+          
+        
+          
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+                  
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
+      <a href="unit?unit=26&lesson=31" id="lesson_31">Lecture 10: Decision Tree III</a>
       
         <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
     alt="Not Started"
@@ -2551,16 +2632,6 @@ function close_popup(){
             
                 
             
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
           
           
         
@@ -2569,10 +2640,18 @@ function close_popup(){
                 
             
                 
+            
+                
+            
+                
+            
+                
+            
+                
                   
     <li  class="subunit_other" >
   <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
-      <a href="unit?unit=30&lesson=32" id="lesson_32">Sequence_data_part_1</a>
+      <a href="unit?unit=26&lesson=32" id="lesson_32">Lecture 11: Decision Tree IV</a>
       
         <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
     alt="Not Started"
@@ -2592,16 +2671,6 @@ function close_popup(){
             
                 
             
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
           
           
         
@@ -2612,10 +2681,18 @@ function close_popup(){
                 
             
                 
+            
+                
+            
+                
+            
+                
+            
+                
                   
     <li  class="subunit_other" >
   <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
-      <a href="unit?unit=30&lesson=33" id="lesson_33">Sequence_data_part_2</a>
+      <a href="unit?unit=26&lesson=33" id="lesson_33">Week 2 Lecture Material</a>
       
         <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
     alt="Not Started"
@@ -2633,17 +2710,33 @@ function close_popup(){
             
                 
             
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
           
+          
+        
+          
+          
+            
+                
+                  
+    
+      <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
+    
+          
+            
+            <a href="assessment?name=157" id="assessment_157">Quiz: Week 2 : Assignment 2</a>          
+          
+            <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-157">
+</div>
+          
+        </div></li>
+  
+                
+            
           
         
           
@@ -2655,10 +2748,18 @@ function close_popup(){
                 
             
                 
+            
+                
+            
+                
+            
+                
+            
+                
                   
     <li  class="subunit_other" >
   <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
-      <a href="unit?unit=30&lesson=34" id="lesson_34">Sequence_data_part_3</a>
+      <a href="unit?unit=26&lesson=34" id="lesson_34">Week 2 Feedback Form</a>
       
         <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
     alt="Not Started"
@@ -2674,241 +2775,10 @@ function close_popup(){
             
                 
             
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
           
           
         
           
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-                  
-    <li  class="subunit_other" >
-  <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
-      <a href="unit?unit=30&lesson=35" id="lesson_35">Sequence_data_part_4</a>
-      
-        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
-    alt="Not Started"
-    title="Not Started"
-    class="gcb-progress-icon"
-    id="progress-state-html-35">
-</div>
-      
-    </div></li>
-    
-  
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-          
-          
-        
-          
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-                  
-    <li  class="subunit_other" >
-  <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
-      <a href="unit?unit=30&lesson=36" id="lesson_36">Numpy</a>
-      
-        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
-    alt="Not Started"
-    title="Not Started"
-    class="gcb-progress-icon"
-    id="progress-state-html-36">
-</div>
-      
-    </div></li>
-    
-  
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-          
-          
-        
-          
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-                  
-    <li  class="subunit_other" >
-  <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
-      <a href="unit?unit=30&lesson=37" id="lesson_37">Week 2 : Lecture slides</a>
-      
-        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
-    alt="Not Started"
-    title="Not Started"
-    class="gcb-progress-icon"
-    id="progress-state-html-37">
-</div>
-      
-    </div></li>
-    
-  
-                
-            
-                
-            
-                
-            
-                
-            
-          
-          
-        
-          
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-                  
-    <li  class="subunit_other" >
-  <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
-      <a href="unit?unit=30&lesson=38" id="lesson_38">Week 2 - FAQs</a>
-      
-        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
-    alt="Not Started"
-    title="Not Started"
-    class="gcb-progress-icon"
-    id="progress-state-html-38">
-</div>
-      
-    </div></li>
-    
-  
-                
-            
-                
-            
-                
-            
-          
-          
-        
-          
-          
-            
-                
-                  
-    
-      <li  class="subunit_other" >
-  <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
-    
-          
-            
-            <a href="assessment?name=154" id="assessment_154">Quiz: Week 2: Assignment 2</a>          
-          
-            <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
-    alt="Not Started"
-    title="Not Started"
-    class="gcb-progress-icon"
-    id="progress-state-154">
-</div>
-          
-        </div></li>
-  
-                
-            
-                
-            
-          
-        
-          
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-                  
-                
-            
-                
-            
-          
-          
-        
-          
-            
-                
             
                 
             
@@ -2930,13 +2800,13 @@ function close_popup(){
                   
     <li  class="subunit_other" >
   <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
-      <a href="unit?unit=30&lesson=114" id="lesson_114">Week 2 Feedback Form : Python for Data Science</a>
+      <a href="unit?unit=26&lesson=163" id="lesson_163">Assignment 2 Solution</a>
       
         <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
     alt="Not Started"
     title="Not Started"
     class="gcb-progress-icon"
-    id="progress-state-html-114">
+    id="progress-state-html-163">
 </div>
       
     </div></li>
@@ -2947,34 +2817,12 @@ function close_popup(){
           
           
         
-          
-          
-            
-                
-            
-                
-                  
-    
-      <li  class="subunit_other" >
-  <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
-    
-          
-            
-            <a href="assessment?name=157" id="assessment_157">Practice: Week 2: Practice Assignment 2</a>          
-          
-            <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
-    alt="Not Started"
-    title="Not Started"
-    class="gcb-progress-icon"
-    id="progress-state-157">
-</div>
-          
-        </div></li>
+      
   
-                
-            
-          
-        
+      
+  
+      
+  
       
   
       
@@ -3012,13 +2860,17 @@ function close_popup(){
     
       
         
-          <div class="unit_navbar" id="unit_navbar_41" >
+      
+    
+      
+        
+          <div class="unit_navbar" id="unit_navbar_36" >
   <div  class="unit_heading" 
-    id="unit_heading_41"
-    onclick='toggleSubUnitNavBar("subunit_navbar_41")'><a href="" onclick="javascript:event.preventDefault();">
+    id="unit_heading_36"
+    onclick='toggleSubUnitNavBar("subunit_navbar_36")'><a href="" onclick="javascript:event.preventDefault();">
      Week 3 </a></div>
     
-      <ul class="subunit_navbar_other" id="subunit_navbar_41">
+      <ul class="subunit_navbar_other" id="subunit_navbar_36">
     
             
               
@@ -3037,6 +2889,10 @@ function close_popup(){
       
   
       
+  
+      
+  
+      
         
           
             
@@ -3044,7 +2900,202 @@ function close_popup(){
                   
     <li  class="subunit_other" >
   <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
-      <a href="unit?unit=41&lesson=42" id="lesson_42">Reading data</a>
+      <a href="unit?unit=36&lesson=37" id="lesson_37">Lecture 12: Bayes Classifier I</a>
+      
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-37">
+</div>
+      
+    </div></li>
+    
+  
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+          
+          
+        
+          
+            
+                
+            
+                
+                  
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
+      <a href="unit?unit=36&lesson=38" id="lesson_38">Lecture 13: Bayes Classifier II</a>
+      
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-38">
+</div>
+      
+    </div></li>
+    
+  
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+          
+          
+        
+          
+            
+                
+            
+                
+            
+                
+                  
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
+      <a href="unit?unit=36&lesson=39" id="lesson_39">Lecture 14: Bayes Classifier III</a>
+      
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-39">
+</div>
+      
+    </div></li>
+    
+  
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+          
+          
+        
+          
+            
+                
+            
+                
+            
+                
+            
+                
+                  
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
+      <a href="unit?unit=36&lesson=40" id="lesson_40">Lecture 15: Bayes Classifier IV</a>
+      
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-40">
+</div>
+      
+    </div></li>
+    
+  
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+          
+          
+        
+          
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+                  
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
+      <a href="unit?unit=36&lesson=41" id="lesson_41">Lecture 16: Bayes Classifier V</a>
+      
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-41">
+</div>
+      
+    </div></li>
+    
+  
+                
+            
+                
+            
+                
+            
+                
+            
+          
+          
+        
+          
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+                  
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
+      <a href="unit?unit=36&lesson=42" id="lesson_42">Week 3 Lecture Material</a>
       
         <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
     alt="Not Started"
@@ -3062,29 +3113,33 @@ function close_popup(){
             
                 
             
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
           
+          
+        
+          
+          
+            
+                
+                  
+    
+      <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
+    
+          
+            
+            <a href="assessment?name=158" id="assessment_158">Quiz: Week 3 : Assignment 3</a>          
+          
+            <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-158">
+</div>
+          
+        </div></li>
+  
+                
+            
           
         
           
@@ -3092,10 +3147,20 @@ function close_popup(){
                 
             
                 
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
                   
     <li  class="subunit_other" >
   <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
-      <a href="unit?unit=41&lesson=43" id="lesson_43">Pandas Dataframes I</a>
+      <a href="unit?unit=36&lesson=43" id="lesson_43">Week 3 Feedback Form</a>
       
         <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
     alt="Not Started"
@@ -3111,28 +3176,6 @@ function close_popup(){
             
                 
             
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
           
           
         
@@ -3143,16 +3186,26 @@ function close_popup(){
                 
             
                 
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
                   
     <li  class="subunit_other" >
   <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
-      <a href="unit?unit=41&lesson=44" id="lesson_44">Pandas Dataframes II</a>
+      <a href="unit?unit=36&lesson=164" id="lesson_164">Assignment 3 Solution</a>
       
         <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
     alt="Not Started"
     title="Not Started"
     class="gcb-progress-icon"
-    id="progress-state-html-44">
+    id="progress-state-html-164">
 </div>
       
     </div></li>
@@ -3160,95 +3213,93 @@ function close_popup(){
   
                 
             
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
           
           
         
-          
-            
-                
-            
-                
-            
-                
-            
-                
-                  
-    <li  class="subunit_other" >
-  <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
-      <a href="unit?unit=41&lesson=45" id="lesson_45">Pandas Dataframes III</a>
       
-        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
-    alt="Not Started"
-    title="Not Started"
-    class="gcb-progress-icon"
-    id="progress-state-html-45">
-</div>
-      
-    </div></li>
-    
   
-                
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
             
-                
+          </ul></div>
+        
+      
+    
+      
+        
+      
+    
+      
+        
+          <div class="unit_navbar" id="unit_navbar_45" >
+  <div  class="unit_heading" 
+    id="unit_heading_45"
+    onclick='toggleSubUnitNavBar("subunit_navbar_45")'><a href="" onclick="javascript:event.preventDefault();">
+     Week 4 </a></div>
+    
+      <ul class="subunit_navbar_other" id="subunit_navbar_45">
+    
             
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-          
-          
+              
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
         
           
-            
-                
-            
-                
-            
-                
-            
-                
             
                 
                   
     <li  class="subunit_other" >
   <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
-      <a href="unit?unit=41&lesson=46" id="lesson_46">Control structures &amp; Functions</a>
+      <a href="unit?unit=45&lesson=46" id="lesson_46">Lecture 17 : K Nearest Neighbor I</a>
       
         <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
     alt="Not Started"
@@ -3276,10 +3327,6 @@ function close_popup(){
             
                 
             
-                
-            
-                
-            
           
           
         
@@ -3288,18 +3335,10 @@ function close_popup(){
                 
             
                 
-            
-                
-            
-                
-            
-                
-            
-                
                   
     <li  class="subunit_other" >
   <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
-      <a href="unit?unit=41&lesson=47" id="lesson_47">Exploratory data analysis</a>
+      <a href="unit?unit=45&lesson=47" id="lesson_47">Lecture 18 : K Nearest Neighbor II</a>
       
         <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
     alt="Not Started"
@@ -3325,10 +3364,6 @@ function close_popup(){
             
                 
             
-                
-            
-                
-            
           
           
         
@@ -3339,18 +3374,10 @@ function close_popup(){
                 
             
                 
-            
-                
-            
-                
-            
-                
-            
-                
                   
     <li  class="subunit_other" >
   <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
-      <a href="unit?unit=41&lesson=48" id="lesson_48">Data Visualization-Part I</a>
+      <a href="unit?unit=45&lesson=48" id="lesson_48">Lecture 19: K Nearest Neighbor III</a>
       
         <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
     alt="Not Started"
@@ -3374,10 +3401,6 @@ function close_popup(){
             
                 
             
-                
-            
-                
-            
           
           
         
@@ -3390,18 +3413,10 @@ function close_popup(){
                 
             
                 
-            
-                
-            
-                
-            
-                
-            
-                
                   
     <li  class="subunit_other" >
   <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
-      <a href="unit?unit=41&lesson=49" id="lesson_49">Data Visualization-Part II</a>
+      <a href="unit?unit=45&lesson=49" id="lesson_49">Lecture 20: K Nearest Neighbor IV</a>
       
         <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
     alt="Not Started"
@@ -3423,10 +3438,6 @@ function close_popup(){
             
                 
             
-                
-            
-                
-            
           
           
         
@@ -3441,18 +3452,10 @@ function close_popup(){
                 
             
                 
-            
-                
-            
-                
-            
-                
-            
-                
                   
     <li  class="subunit_other" >
   <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
-      <a href="unit?unit=41&lesson=50" id="lesson_50">Dealing with missing data</a>
+      <a href="unit?unit=45&lesson=50" id="lesson_50">Lecture 21: K Nearest Neighbor V</a>
       
         <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
     alt="Not Started"
@@ -3472,10 +3475,6 @@ function close_popup(){
             
                 
             
-                
-            
-                
-            
           
           
         
@@ -3492,18 +3491,10 @@ function close_popup(){
                 
             
                 
-            
-                
-            
-                
-            
-                
-            
-                
                   
     <li  class="subunit_other" >
   <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
-      <a href="unit?unit=41&lesson=51" id="lesson_51">Datasets</a>
+      <a href="unit?unit=45&lesson=51" id="lesson_51">Week 4 Lecture Material</a>
       
         <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
     alt="Not Started"
@@ -3521,11 +3512,33 @@ function close_popup(){
             
                 
             
-                
-            
-                
-            
           
+          
+        
+          
+          
+            
+                
+                  
+    
+      <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
+    
+          
+            
+            <a href="assessment?name=159" id="assessment_159">Quiz: Week 4 : Assignment 4</a>          
+          
+            <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-159">
+</div>
+          
+        </div></li>
+  
+                
+            
           
         
           
@@ -3543,18 +3556,10 @@ function close_popup(){
                 
             
                 
-            
-                
-            
-                
-            
-                
-            
-                
                   
     <li  class="subunit_other" >
   <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
-      <a href="unit?unit=41&lesson=52" id="lesson_52">Week 3: Lecture slides</a>
+      <a href="unit?unit=45&lesson=52" id="lesson_52">Week 4 Feedback Form</a>
       
         <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
     alt="Not Started"
@@ -3570,22 +3575,10 @@ function close_popup(){
             
                 
             
-                
-            
-                
-            
           
           
         
           
-            
-                
-            
-                
-            
-                
-            
-                
             
                 
             
@@ -3605,101 +3598,13 @@ function close_popup(){
                   
     <li  class="subunit_other" >
   <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
-      <a href="unit?unit=41&lesson=53" id="lesson_53">Week 3 - FAQs</a>
+      <a href="unit?unit=45&lesson=166" id="lesson_166">Assignment 4 Solution</a>
       
         <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
     alt="Not Started"
     title="Not Started"
     class="gcb-progress-icon"
-    id="progress-state-html-53">
-</div>
-      
-    </div></li>
-    
-  
-                
-            
-                
-            
-                
-            
-          
-          
-        
-          
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-                  
-                
-            
-                
-            
-          
-          
-        
-          
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-                  
-    <li  class="subunit_other" >
-  <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
-      <a href="unit?unit=41&lesson=115" id="lesson_115">Week 3 Feedback Form : Python for Data Science</a>
-      
-        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
-    alt="Not Started"
-    title="Not Started"
-    class="gcb-progress-icon"
-    id="progress-state-html-115">
+    id="progress-state-html-166">
 </div>
       
     </div></li>
@@ -3708,62 +3613,6 @@ function close_popup(){
                 
             
           
-          
-        
-          
-          
-            
-                
-                  
-    
-      <li  class="subunit_other" >
-  <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
-    
-          
-            
-            <a href="assessment?name=158" id="assessment_158">Practice: Week 3: Practice Assignment 3</a>          
-          
-            <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
-    alt="Not Started"
-    title="Not Started"
-    class="gcb-progress-icon"
-    id="progress-state-158">
-</div>
-          
-        </div></li>
-  
-                
-            
-                
-            
-          
-        
-          
-          
-            
-                
-            
-                
-                  
-    
-      <li  class="subunit_other" >
-  <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
-    
-          
-            
-            <a href="assessment?name=162" id="assessment_162">Quiz: Week 3 : Assignment 3</a>          
-          
-            <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
-    alt="Not Started"
-    title="Not Started"
-    class="gcb-progress-icon"
-    id="progress-state-162">
-</div>
-          
-        </div></li>
-  
-                
-            
           
         
       
@@ -3801,16 +3650,30 @@ function close_popup(){
     
       
         
-          <div class="unit_navbar" id="unit_navbar_56" >
-  <div  class="unit_heading" 
-    id="unit_heading_56"
-    onclick='toggleSubUnitNavBar("subunit_navbar_56")'><a href="" onclick="javascript:event.preventDefault();">
-     Week 4 </a></div>
+      
     
-      <ul class="subunit_navbar_other" id="subunit_navbar_56">
+      
+        
+          <div class="unit_navbar" id="unit_navbar_54" >
+  <div  class="unit_heading" 
+    id="unit_heading_54"
+    onclick='toggleSubUnitNavBar("subunit_navbar_54")'><a href="" onclick="javascript:event.preventDefault();">
+     Week 5 </a></div>
+    
+      <ul class="subunit_navbar_other" id="subunit_navbar_54">
     
             
               
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
       
   
       
@@ -3835,7 +3698,85 @@ function close_popup(){
                   
     <li  class="subunit_other" >
   <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
-      <a href="unit?unit=56&lesson=57" id="lesson_57">Introduction to Classification Case Study</a>
+      <a href="unit?unit=54&lesson=55" id="lesson_55">Lecture 22: Support Vector Machine I</a>
+      
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-55">
+</div>
+      
+    </div></li>
+    
+  
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+          
+          
+        
+          
+            
+                
+            
+                
+                  
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
+      <a href="unit?unit=54&lesson=56" id="lesson_56">Lecture 23: Support Vector Machine II</a>
+      
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-56">
+</div>
+      
+    </div></li>
+    
+  
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+          
+          
+        
+          
+            
+                
+            
+                
+            
+                
+                  
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
+      <a href="unit?unit=54&lesson=57" id="lesson_57">Lecture 24: Support Vector Machine III</a>
       
         <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
     alt="Not Started"
@@ -3859,16 +3800,6 @@ function close_popup(){
             
                 
             
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
           
           
         
@@ -3877,10 +3808,14 @@ function close_popup(){
                 
             
                 
+            
+                
+            
+                
                   
     <li  class="subunit_other" >
   <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
-      <a href="unit?unit=56&lesson=58" id="lesson_58">Case Study on Classification Part I</a>
+      <a href="unit?unit=54&lesson=58" id="lesson_58">Lecture 25: Support Vector Machine IV</a>
       
         <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
     alt="Not Started"
@@ -3902,16 +3837,6 @@ function close_popup(){
             
                 
             
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
           
           
         
@@ -3922,10 +3847,14 @@ function close_popup(){
                 
             
                 
+            
+                
+            
+                
                   
     <li  class="subunit_other" >
   <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
-      <a href="unit?unit=56&lesson=59" id="lesson_59">Case Study on Classification Part II</a>
+      <a href="unit?unit=54&lesson=59" id="lesson_59">Lecture 26: Support Vector Machine V</a>
       
         <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
     alt="Not Started"
@@ -3945,16 +3874,6 @@ function close_popup(){
             
                 
             
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
           
           
         
@@ -3967,10 +3886,14 @@ function close_popup(){
                 
             
                 
+            
+                
+            
+                
                   
     <li  class="subunit_other" >
   <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
-      <a href="unit?unit=56&lesson=60" id="lesson_60">Introduction to Regression Case Study</a>
+      <a href="unit?unit=54&lesson=60" id="lesson_60">Week 5 Lecture Material</a>
       
         <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
     alt="Not Started"
@@ -3988,17 +3911,33 @@ function close_popup(){
             
                 
             
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
           
+          
+        
+          
+          
+            
+                
+                  
+    
+      <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
+    
+          
+            
+            <a href="assessment?name=160" id="assessment_160">Quiz: Week 5 : Assignment 5</a>          
+          
+            <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-160">
+</div>
+          
+        </div></li>
+  
+                
+            
           
         
           
@@ -4012,10 +3951,14 @@ function close_popup(){
                 
             
                 
+            
+                
+            
+                
                   
     <li  class="subunit_other" >
   <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
-      <a href="unit?unit=56&lesson=61" id="lesson_61">Case Study on Regression Part I</a>
+      <a href="unit?unit=54&lesson=61" id="lesson_61">Week 5 Feedback Form</a>
       
         <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
     alt="Not Started"
@@ -4031,102 +3974,6 @@ function close_popup(){
             
                 
             
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-          
-          
-        
-          
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-                  
-    <li  class="subunit_other" >
-  <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
-      <a href="unit?unit=56&lesson=62" id="lesson_62">Case Study on Regression Part II</a>
-      
-        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
-    alt="Not Started"
-    title="Not Started"
-    class="gcb-progress-icon"
-    id="progress-state-html-62">
-</div>
-      
-    </div></li>
-    
-  
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-          
-          
-        
-          
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-                  
-    <li  class="subunit_other" >
-  <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
-      <a href="unit?unit=56&lesson=63" id="lesson_63">Case Study on Regression Part III</a>
-      
-        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
-    alt="Not Started"
-    title="Not Started"
-    class="gcb-progress-icon"
-    id="progress-state-html-63">
-</div>
-      
-    </div></li>
-    
-  
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
           
           
         
@@ -4150,134 +3997,13 @@ function close_popup(){
                   
     <li  class="subunit_other" >
   <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
-      <a href="unit?unit=56&lesson=64" id="lesson_64">Data sets</a>
+      <a href="unit?unit=54&lesson=168" id="lesson_168">Assignment 5 Solution</a>
       
         <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
     alt="Not Started"
     title="Not Started"
     class="gcb-progress-icon"
-    id="progress-state-html-64">
-</div>
-      
-    </div></li>
-    
-  
-                
-            
-                
-            
-                
-            
-                
-            
-          
-          
-        
-          
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-                  
-    <li  class="subunit_other" >
-  <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
-      <a href="unit?unit=56&lesson=65" id="lesson_65">Case Study codes</a>
-      
-        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
-    alt="Not Started"
-    title="Not Started"
-    class="gcb-progress-icon"
-    id="progress-state-html-65">
-</div>
-      
-    </div></li>
-    
-  
-                
-            
-                
-            
-                
-            
-          
-          
-        
-          
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-                  
-                
-            
-                
-            
-          
-          
-        
-          
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-                  
-    <li  class="subunit_other" >
-  <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
-      <a href="unit?unit=56&lesson=116" id="lesson_116">Week 4 Feedback Form : Python for Data Science</a>
-      
-        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
-    alt="Not Started"
-    title="Not Started"
-    class="gcb-progress-icon"
-    id="progress-state-html-116">
+    id="progress-state-html-168">
 </div>
       
     </div></li>
@@ -4288,64 +4014,6 @@ function close_popup(){
           
           
         
-          
-          
-            
-                
-                  
-    
-      <li  class="subunit_other" >
-  <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
-    
-          
-            
-            <a href="assessment?name=159" id="assessment_159">Practice: Week 4: Practice Assignment 4</a>          
-          
-            <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
-    alt="Not Started"
-    title="Not Started"
-    class="gcb-progress-icon"
-    id="progress-state-159">
-</div>
-          
-        </div></li>
-  
-                
-            
-                
-            
-          
-        
-          
-          
-            
-                
-            
-                
-                  
-    
-      <li  class="subunit_other" >
-  <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
-    
-          
-            
-            <a href="assessment?name=164" id="assessment_164">Quiz: Week 4 : Assignment 4</a>          
-          
-            <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
-    alt="Not Started"
-    title="Not Started"
-    class="gcb-progress-icon"
-    id="progress-state-164">
-</div>
-          
-        </div></li>
-  
-                
-            
-          
-        
-      
-  
       
   
       
@@ -4377,13 +4045,17 @@ function close_popup(){
     
       
         
-          <div class="unit_navbar" id="unit_navbar_69" >
-  <div  class="unit_heading" 
-    id="unit_heading_69"
-    onclick='toggleSubUnitNavBar("subunit_navbar_69")'><a href="" onclick="javascript:event.preventDefault();">
-     Supporting material for Week 4 </a></div>
+      
     
-      <ul class="subunit_navbar_other" id="subunit_navbar_69">
+      
+        
+          <div class="unit_navbar" id="unit_navbar_63" >
+  <div  class="unit_heading" 
+    id="unit_heading_63"
+    onclick='toggleSubUnitNavBar("subunit_navbar_63")'><a href="" onclick="javascript:event.preventDefault();">
+     Week 6 </a></div>
+    
+      <ul class="subunit_navbar_other" id="subunit_navbar_63">
     
             
               
@@ -4406,6 +4078,18 @@ function close_popup(){
       
   
       
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
         
           
             
@@ -4413,7 +4097,267 @@ function close_popup(){
                   
     <li  class="subunit_other" >
   <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
-      <a href="unit?unit=69&lesson=70" id="lesson_70">Module : Predictive Modelling</a>
+      <a href="unit?unit=63&lesson=64" id="lesson_64">Lecture 27: Kernel Machines</a>
+      
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-64">
+</div>
+      
+    </div></li>
+    
+  
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+          
+          
+        
+          
+            
+                
+            
+                
+                  
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
+      <a href="unit?unit=63&lesson=65" id="lesson_65">Lecture 28: Artificial Neural Networks I</a>
+      
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-65">
+</div>
+      
+    </div></li>
+    
+  
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+          
+          
+        
+          
+            
+                
+            
+                
+            
+                
+                  
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
+      <a href="unit?unit=63&lesson=66" id="lesson_66">Lecture 29: Artificial Neural Networks II</a>
+      
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-66">
+</div>
+      
+    </div></li>
+    
+  
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+          
+          
+        
+          
+            
+                
+            
+                
+            
+                
+            
+                
+                  
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
+      <a href="unit?unit=63&lesson=67" id="lesson_67">Lecture 30: Artificial Neural Networks III</a>
+      
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-67">
+</div>
+      
+    </div></li>
+    
+  
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+          
+          
+        
+          
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+                  
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
+      <a href="unit?unit=63&lesson=68" id="lesson_68">Lecture 31: Artificial Neural Networks IV</a>
+      
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-68">
+</div>
+      
+    </div></li>
+    
+  
+                
+            
+                
+            
+                
+            
+                
+            
+          
+          
+        
+          
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+                  
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
+      <a href="unit?unit=63&lesson=69" id="lesson_69">Week 6 Lecture Material</a>
+      
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-69">
+</div>
+      
+    </div></li>
+    
+  
+                
+            
+                
+            
+                
+            
+          
+          
+        
+          
+          
+            
+                
+                  
+    
+      <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
+    
+          
+            
+            <a href="assessment?name=165" id="assessment_165">Quiz: Week 6 : Assignment 6</a>          
+          
+            <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-165">
+</div>
+          
+        </div></li>
+  
+                
+            
+          
+        
+          
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+                  
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
+      <a href="unit?unit=63&lesson=70" id="lesson_70">Week 6 Feedback Form</a>
       
         <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
     alt="Not Started"
@@ -4429,26 +4373,6 @@ function close_popup(){
             
                 
             
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
           
           
         
@@ -4457,16 +4381,28 @@ function close_popup(){
                 
             
                 
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
                   
     <li  class="subunit_other" >
   <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
-      <a href="unit?unit=69&lesson=71" id="lesson_71">Linear Regression</a>
+      <a href="unit?unit=63&lesson=170" id="lesson_170">Assignment 6 Solution</a>
       
         <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
     alt="Not Started"
     title="Not Started"
     class="gcb-progress-icon"
-    id="progress-state-html-71">
+    id="progress-state-html-170">
 </div>
       
     </div></li>
@@ -4474,87 +4410,93 @@ function close_popup(){
   
                 
             
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
           
           
         
-          
-            
-                
-            
-                
-            
-                
-                  
-    <li  class="subunit_other" >
-  <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
-      <a href="unit?unit=69&lesson=72" id="lesson_72">Model Assessment</a>
       
-        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
-    alt="Not Started"
-    title="Not Started"
-    class="gcb-progress-icon"
-    id="progress-state-html-72">
-</div>
-      
-    </div></li>
-    
   
-                
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
             
-                
+          </ul></div>
+        
+      
+    
+      
+        
+      
+    
+      
+        
+          <div class="unit_navbar" id="unit_navbar_72" >
+  <div  class="unit_heading" 
+    id="unit_heading_72"
+    onclick='toggleSubUnitNavBar("subunit_navbar_72")'><a href="" onclick="javascript:event.preventDefault();">
+     Week 7 </a></div>
+    
+      <ul class="subunit_navbar_other" id="subunit_navbar_72">
+    
             
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-          
-          
+              
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
         
           
-            
-                
-            
-                
-            
-                
             
                 
                   
     <li  class="subunit_other" >
   <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
-      <a href="unit?unit=69&lesson=73" id="lesson_73">Diagnostics to Improve Linear Model Fit</a>
+      <a href="unit?unit=72&lesson=73" id="lesson_73">Lecture 32: Clustering I</a>
       
         <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
     alt="Not Started"
@@ -4582,8 +4524,6 @@ function close_popup(){
             
                 
             
-                
-            
           
           
         
@@ -4592,16 +4532,10 @@ function close_popup(){
                 
             
                 
-            
-                
-            
-                
-            
-                
                   
     <li  class="subunit_other" >
   <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
-      <a href="unit?unit=69&lesson=74" id="lesson_74">Cross Validation</a>
+      <a href="unit?unit=72&lesson=74" id="lesson_74">Lecture 33: Clustering II</a>
       
         <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
     alt="Not Started"
@@ -4627,8 +4561,6 @@ function close_popup(){
             
                 
             
-                
-            
           
           
         
@@ -4639,16 +4571,10 @@ function close_popup(){
                 
             
                 
-            
-                
-            
-                
-            
-                
                   
     <li  class="subunit_other" >
   <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
-      <a href="unit?unit=69&lesson=75" id="lesson_75">Classification</a>
+      <a href="unit?unit=72&lesson=75" id="lesson_75">Lecture 34: Clustering III</a>
       
         <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
     alt="Not Started"
@@ -4672,8 +4598,6 @@ function close_popup(){
             
                 
             
-                
-            
           
           
         
@@ -4686,16 +4610,10 @@ function close_popup(){
                 
             
                 
-            
-                
-            
-                
-            
-                
                   
     <li  class="subunit_other" >
   <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
-      <a href="unit?unit=69&lesson=76" id="lesson_76">Logistic Regression</a>
+      <a href="unit?unit=72&lesson=76" id="lesson_76">Lecture 35: Clustering IV</a>
       
         <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
     alt="Not Started"
@@ -4717,8 +4635,6 @@ function close_popup(){
             
                 
             
-                
-            
           
           
         
@@ -4733,16 +4649,10 @@ function close_popup(){
                 
             
                 
-            
-                
-            
-                
-            
-                
                   
     <li  class="subunit_other" >
   <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
-      <a href="unit?unit=69&lesson=77" id="lesson_77">K - Nearest Neighbors (kNN)</a>
+      <a href="unit?unit=72&lesson=77" id="lesson_77">Lecture 36: Clustering V</a>
       
         <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
     alt="Not Started"
@@ -4762,8 +4672,6 @@ function close_popup(){
             
                 
             
-                
-            
           
           
         
@@ -4780,16 +4688,10 @@ function close_popup(){
                 
             
                 
-            
-                
-            
-                
-            
-                
                   
     <li  class="subunit_other" >
   <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
-      <a href="unit?unit=69&lesson=78" id="lesson_78">K - means Clustering</a>
+      <a href="unit?unit=72&lesson=78" id="lesson_78">Week 7 Lecture Material</a>
       
         <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
     alt="Not Started"
@@ -4807,9 +4709,33 @@ function close_popup(){
             
                 
             
+          
+          
+        
+          
+          
+            
+                
+                  
+    
+      <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
+    
+          
+            
+            <a href="assessment?name=167" id="assessment_167">Quiz: Week 7 : Assignment 7</a>          
+          
+            <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-167">
+</div>
+          
+        </div></li>
+  
                 
             
-          
           
         
           
@@ -4827,16 +4753,10 @@ function close_popup(){
                 
             
                 
-            
-                
-            
-                
-            
-                
                   
     <li  class="subunit_other" >
   <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
-      <a href="unit?unit=69&lesson=79" id="lesson_79">Logistic Regression ( Continued )</a>
+      <a href="unit?unit=72&lesson=79" id="lesson_79">Week 7 Feedback Form</a>
       
         <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
     alt="Not Started"
@@ -4852,18 +4772,10 @@ function close_popup(){
             
                 
             
-                
-            
           
           
         
           
-            
-                
-            
-                
-            
-                
             
                 
             
@@ -4883,60 +4795,13 @@ function close_popup(){
                   
     <li  class="subunit_other" >
   <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
-      <a href="unit?unit=69&lesson=80" id="lesson_80">Decision Trees</a>
+      <a href="unit?unit=72&lesson=171" id="lesson_171">Week 07 : Assignment Solution</a>
       
         <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
     alt="Not Started"
     title="Not Started"
     class="gcb-progress-icon"
-    id="progress-state-html-80">
-</div>
-      
-    </div></li>
-    
-  
-                
-            
-                
-            
-          
-          
-        
-          
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-                  
-    <li  class="subunit_other" >
-  <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
-      <a href="unit?unit=69&lesson=81" id="lesson_81">Multiple Linear Regression</a>
-      
-        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
-    alt="Not Started"
-    title="Not Started"
-    class="gcb-progress-icon"
-    id="progress-state-html-81">
+    id="progress-state-html-171">
 </div>
       
     </div></li>
@@ -4947,14 +4812,6 @@ function close_popup(){
           
           
         
-      
-  
-      
-  
-      
-  
-      
-  
       
   
       
@@ -4978,13 +4835,17 @@ function close_popup(){
     
       
         
-          <div class="unit_navbar" id="unit_navbar_82" >
-  <div  class="unit_heading" 
-    id="unit_heading_82"
-    onclick='toggleSubUnitNavBar("subunit_navbar_82")'><a href="" onclick="javascript:event.preventDefault();">
-     Download Videos </a></div>
+      
     
-      <ul class="subunit_navbar_other" id="subunit_navbar_82">
+      
+        
+          <div class="unit_navbar" id="unit_navbar_81" >
+  <div  class="unit_heading" 
+    id="unit_heading_81"
+    onclick='toggleSubUnitNavBar("subunit_navbar_81")'><a href="" onclick="javascript:event.preventDefault();">
+     Week 8 </a></div>
+    
+      <ul class="subunit_navbar_other" id="subunit_navbar_81">
     
             
               
@@ -5009,6 +4870,24 @@ function close_popup(){
       
   
       
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
         
           
             
@@ -5016,7 +4895,50 @@ function close_popup(){
                   
     <li  class="subunit_other" >
   <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
-      <a href="unit?unit=82&lesson=83" id="lesson_83">MP4 Videos</a>
+      <a href="unit?unit=81&lesson=82" id="lesson_82">Lecture 37 : Regression I</a>
+      
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-82">
+</div>
+      
+    </div></li>
+    
+  
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+          
+          
+        
+          
+            
+                
+            
+                
+                  
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
+      <a href="unit?unit=81&lesson=83" id="lesson_83">Lecture 38 : Regression II</a>
       
         <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
     alt="Not Started"
@@ -5030,79 +4952,79 @@ function close_popup(){
   
                 
             
-          
-          
-        
-      
-  
-      
-  
-      
-  
-      
-  
-      
-  
-      
-  
-      
-  
-      
-  
-      
-  
-      
-  
-      
-  
+                
             
-          </ul></div>
-        
-      
-    
-      
-        
-          <div class="unit_navbar" id="unit_navbar_84" >
-  <div  class="unit_heading" 
-    id="unit_heading_84"
-    onclick='toggleSubUnitNavBar("subunit_navbar_84")'><a href="" onclick="javascript:event.preventDefault();">
-     Books </a></div>
-    
-      <ul class="subunit_navbar_other" id="subunit_navbar_84">
-    
+                
             
-              
-      
-  
-      
-  
-      
-  
-      
-  
-      
-  
-      
-  
-      
-  
-      
-  
-      
-  
-      
-  
-      
-  
-      
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+          
+          
         
           
+            
+                
+            
+                
             
                 
                   
     <li  class="subunit_other" >
   <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
-      <a href="unit?unit=84&lesson=85" id="lesson_85">English Book</a>
+      <a href="unit?unit=81&lesson=84" id="lesson_84">Lecture 39 : Regression III</a>
+      
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-84">
+</div>
+      
+    </div></li>
+    
+  
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+          
+          
+        
+          
+            
+                
+            
+                
+            
+                
+            
+                
+                  
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
+      <a href="unit?unit=81&lesson=85" id="lesson_85">Lecture 40 : Regression IV</a>
       
         <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
     alt="Not Started"
@@ -5116,79 +5038,79 @@ function close_popup(){
   
                 
             
-          
-          
-        
-      
-  
-      
-  
-      
-  
-      
-  
-      
-  
-      
-  
-      
-  
-      
-  
-      
-  
-      
-  
+                
             
-          </ul></div>
-        
-      
-    
-      
-        
-          <div class="unit_navbar" id="unit_navbar_86" >
-  <div  class="unit_heading" 
-    id="unit_heading_86"
-    onclick='toggleSubUnitNavBar("subunit_navbar_86")'><a href="" onclick="javascript:event.preventDefault();">
-     Text Transcripts </a></div>
-    
-      <ul class="subunit_navbar_other" id="subunit_navbar_86">
-    
+                
             
-              
-      
-  
-      
-  
-      
-  
-      
-  
-      
-  
-      
-  
-      
-  
-      
-  
-      
-  
-      
-  
-      
-  
-      
-  
-      
+                
+            
+                
+            
+                
+            
+                
+            
+          
+          
         
           
+            
+                
+            
+                
+            
+                
+            
+                
             
                 
                   
     <li  class="subunit_other" >
   <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
-      <a href="unit?unit=86&lesson=87" id="lesson_87">English Transcript</a>
+      <a href="unit?unit=81&lesson=86" id="lesson_86">Lecture 41 : Dimensionality Reduction - I</a>
+      
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-86">
+</div>
+      
+    </div></li>
+    
+  
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+          
+          
+        
+          
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+                  
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
+      <a href="unit?unit=81&lesson=87" id="lesson_87">Lecture 42 : Dimensionality Reduction - II</a>
       
         <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
     alt="Not Started"
@@ -5202,15 +5124,207 @@ function close_popup(){
   
                 
             
+                
+            
+                
+            
+                
+            
+                
+            
           
           
         
+          
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+                  
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
+      <a href="unit?unit=81&lesson=88" id="lesson_88">Lecture 43 : Tutorial</a>
       
-  
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-88">
+</div>
       
+    </div></li>
+    
   
+                
+            
+                
+            
+                
+            
+                
+            
+          
+          
+        
+          
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+                  
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
+      <a href="unit?unit=81&lesson=89" id="lesson_89">Week 8 Lecture Material</a>
       
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-89">
+</div>
+      
+    </div></li>
+    
   
+                
+            
+                
+            
+                
+            
+          
+          
+        
+          
+          
+            
+                
+                  
+    
+      <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
+    
+          
+            
+            <a href="assessment?name=169" id="assessment_169">Quiz: Week 8 : Assignment 8</a>          
+          
+            <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-169">
+</div>
+          
+        </div></li>
+  
+                
+            
+          
+        
+          
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+                  
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
+      <a href="unit?unit=81&lesson=90" id="lesson_90">Week 8 Feedback Form</a>
+      
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-90">
+</div>
+      
+    </div></li>
+    
+  
+                
+            
+                
+            
+          
+          
+        
+          
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+                  
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
+      <a href="unit?unit=81&lesson=142" id="lesson_142">Week 08 : Assignment Solution</a>
+      
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-142">
+</div>
+      
+    </div></li>
+    
+  
+                
+            
+          
+          
+        
       
   
       
@@ -5229,28 +5343,14 @@ function close_popup(){
       
     
       
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
         
-          <div class="unit_navbar" id="unit_navbar_155" >
+          <div class="unit_navbar" id="unit_navbar_92" >
   <div  class="unit_heading" 
-    id="unit_heading_155"
-    onclick='toggleSubUnitNavBar("subunit_navbar_155")'><a href="" onclick="javascript:event.preventDefault();">
-     Problem Solving Session - Jan 2025 </a></div>
+    id="unit_heading_92"
+    onclick='toggleSubUnitNavBar("subunit_navbar_92")'><a href="" onclick="javascript:event.preventDefault();">
+     DOWNLOAD VIDEOS </a></div>
     
-      <ul class="subunit_navbar_other" id="subunit_navbar_155">
+      <ul class="subunit_navbar_other" id="subunit_navbar_92">
     
             
               
@@ -5302,40 +5402,13 @@ function close_popup(){
                   
     <li  class="subunit_other" >
   <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
-      <a href="unit?unit=155&lesson=161" id="lesson_161">Problem Solving Session - Recording</a>
+      <a href="unit?unit=92&lesson=93" id="lesson_93">MP4 Format</a>
       
         <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
     alt="Not Started"
     title="Not Started"
     class="gcb-progress-icon"
-    id="progress-state-html-161">
-</div>
-      
-    </div></li>
-    
-  
-                
-            
-                
-            
-          
-          
-        
-          
-            
-                
-            
-                
-                  
-    <li  class="subunit_other" >
-  <div class="gcb-left-activity-title-with-progress gcb-nav-pa" style="word-wrap: break-word">
-      <a href="unit?unit=155&lesson=163" id="lesson_163">Survey on Problem Solving sessions - Python for Data Science (noc25-cs60)</a>
-      
-        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
-    alt="Not Started"
-    title="Not Started"
-    class="gcb-progress-icon"
-    id="progress-state-html-163">
+    id="progress-state-html-93">
 </div>
       
     </div></li>
@@ -5346,6 +5419,14 @@ function close_popup(){
           
           
         
+      
+  
+      
+  
+      
+  
+      
+  
       
   
             
@@ -5354,41 +5435,17 @@ function close_popup(){
       
     
       
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
     
       
     
       
-        
-      
     
-      
-        
       
     
     &nbsp;
   </div>
   </div>
 
-  
-    
-  
-    
-  
-    
   
     
   
@@ -5509,6 +5566,46 @@ function close_popup(){
             }
         });
     }
+
+    function downloadHallTicket(){
+        $.ajax({
+            type: "GET",
+            url: 'download_hall_ticket',
+            dataType: 'text',
+            success: function(response){
+                if(response){
+                    let XSSI_PREFIX = ")]}'"
+                    let payload_data = JSON.parse(response.replace(XSSI_PREFIX, ''));
+
+                    if(payload_data.payload){
+                        let payload = JSON.parse(payload_data.payload);
+                        if(payload.status == 'success' && payload.download_url){
+                            window.open(payload.download_url, '_blank');
+                        } else {
+                            alert(payload_data.message || 'Unable to download hall ticket.');
+                        }
+                    } else {
+                        alert(payload_data.message || 'Unable to download hall ticket.');
+                    }
+                } else {
+                    alert('Error while downloading hall ticket, please try again later.');
+                }
+            },
+            error: function (response) {
+                if (response && response.responseText){
+                    let XSSI_PREFIX = ")]}'"
+                    try {
+                        let payload_data = JSON.parse(response.responseText.replace(XSSI_PREFIX, ''));
+                        alert(payload_data.message || 'Unable to download hall ticket.');
+                    } catch (e) {
+                        alert('Error while downloading hall ticket, please try again later.');
+                    }
+                } else {
+                    alert('Network error. Please check your connection and try again.');
+                }
+            }
+        });
+    }
 </script>
    </div>
 
@@ -5606,6 +5703,9 @@ function close_popup(){
   .cache_mesasge{
     padding-left: 20px;
   }
+  .grading_notes_mesasge{
+    font-size: 12px;
+  }
   tr, td {
     padding: 10px 10px
   }
@@ -5646,19 +5746,19 @@ function close_popup(){
                 <tr>
                     <th>Date enrolled</th>
                     <td>
-                        2025-01-26
+                        2026-01-24
                     </td>
                 </tr>
                 <tr>
                     <th>Email</th>
                     <td>
-                        vu4f2324069@pvppcoe.ac.in
+                        vu4f2324074@pvppcoe.ac.in
                     </td>
                 </tr>
                 <tr>
                     <th>Name</th>
                     <td>
-                        Land phakir
+                        Krish Kanti Patel
                     </td>
                 </tr>
             </table>
@@ -5667,38 +5767,107 @@ function close_popup(){
             
                 <div class="course_wise_progress">
                     
-                    <div class="pie" style="--p:60.76;--b:10px;--c:#003366;" data-scale-color="#ffb400">
-                        60.76%
+                    <div class="pie" style="--p:8.7;--b:10px;--c:#003366;" data-scale-color="#ffb400">
+                        8.7%
                     </div>
                     <div><p>Course Progress</p></div>
                 </div>
             
         </div>
     </div>
+    <br>
     
-    <button type="button" class="collapsible rowContent" data-toggle="collapse" href="#grading_policy">
-        Grading and Certification Policy
-    </button>
-    <div id="grading_policy" class="collapse" style="padding: 0px 10px">
-        
-        <div style="float: left">
-            <br>
-            <div style="text-align: justify;">The course is free to enroll and learn from. But if you want a certificate, you have to register and write the proctored exam conducted by us in person at any of the designated exam centres.</div><span style="font-family: Arial;"><div style="text-align: justify;">The exam is optional for a fee of Rs 1000/- (Rupees one thousand only).</div></span><span style="font-family: Arial;"><div style="text-align: justify;">Date and Time of Exams: <span style="font-size: 14.6667px; white-space: pre-wrap;"><b>March 22, 2025</b></span><span style="font-family: arial, helvetica, clean, sans-serif; font-size: 10pt;"><span style="font-family: Arial;">&nbsp;Morning session 9am to 12 noon; Afternoon Session 2pm to 5pm.</span></span></div></span><div style="font-size: 10pt; text-align: justify;"><span style="font-family: Arial; font-size: 10pt;">Registration url: Announcements will be made when the registration form is open for registrations.</span></div><span style="font-size: 10pt; font-family: Arial;"><div style="text-align: justify;"><span style="font-size: 10pt;">The online registration form has to be filled and the certification exam fee needs to be paid. More details will be made available when the exam registration form is published. If there are any changes, it will be mentioned then.</span></div></span><span style="font-size: 10pt; font-family: Arial;"><div style="text-align: justify;"><span style="font-size: 10pt;">Please check the form for more details on the cities where the exams will be held, the conditions you agree to when you fill the form etc.</span></div></span><div style="text-align: justify;"><span style="font-size: 13.3333px;"><br></span></div><b style="font-size: 10pt; font-family: Arial;">CRITERIA TO GET A CERTIFICATE</b><br><br><span style="font-size: 10pt; font-family: Arial;">Average assignment score = 25% of average of best 3 assignments out of the total 4 assignments given in the course. </span><br><span style="font-size: 10pt; font-family: Arial;">Exam score = 75% of the proctored certification exam score out of 100</span><br><br><span style="font-size: 10pt; font-family: Arial;">Final score = Average assignment score + Exam score</span><br><br><b>Please note that assignments encompass all types (including quizzes, programming tasks, and essay submissions) available in the specific week.</b><br> <br><b style="font-size: 10pt; font-family: Arial;">YOU WILL BE ELIGIBLE FOR A CERTIFICATE ONLY IF AVERAGE ASSIGNMENT SCORE &gt;=10/25 AND EXAM SCORE &gt;= 30/75. If one of the 2 criteria is not met, you will not get the certificate even if the Final score &gt;= 40/100.</b><br><br><span style="font-size: 10pt; font-family: Arial;">Certificate will have your name, photograph and the score in the final exam with the breakup.It will have the logos of NPTEL and IIT Madras .It will be e-verifiable at </span><a href="http://nptel.ac.in/noc" target="_blank" title="" style="font-size: 10pt;">nptel.ac.in/noc</a><span style="font-size: 10pt; font-family: Arial;">.</span><br><br><span style="font-size: 10pt; font-family: Arial;">Only the e-certificate will be made available. Hard copies will not be dispatched.</span><br><br><span style="font-size: 10pt; font-family: Arial;">Once again, thanks for your interest in our online courses and certification. Happy learning. </span><br><br><div style="text-align: justify;"><span style="font-family: Arial; font-size: 10pt;">- NPTEL team</span></div>
-            <br>
+    
+        <button type="button" class="collapsible rowContent" data-toggle="collapse" href="#assessment_wise_progress">
+            Assessment scores</button>
+        <div id="assessment_wise_progress" class="collapse">
+            <div class="cache_mesasge">
+                    <SPAN STYLE="font-size:10px"><i><b>NOTE</b>: Please scroll down to see all assignment scores</i></SPAN>
+            </div>
+            <table class="assessment_wise_table">
+                
+                    <tr>
+                        <td>Week 1 : Assignment 1:</td>
+                        <td>
+                            
+                                <span id="assessment-score-Week 1 : Assignment 1">&nbsp;&nbsp;<b>100.0</b></span>
+                            
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>Week 2 : Assignment 2:</td>
+                        <td>
+                            
+                                <span id="assessment-score-Week 2 : Assignment 2">&nbsp;&nbsp;<b>100.0</b></span>
+                            
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>Week 3 : Assignment 3:</td>
+                        <td>
+                            
+                                <span id="assessment-score-Week 3 : Assignment 3">&nbsp;&nbsp;<b>91.0</b></span>
+                            
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>Week 4 : Assignment 4:</td>
+                        <td>
+                            
+                                <span id="assessment-score-Week 4 : Assignment 4">&nbsp;&nbsp;<b>100.0</b></span>
+                            
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>Week 5 : Assignment 5:</td>
+                        <td>
+                            
+                                <span id="assessment-score-Week 5 : Assignment 5">&nbsp;&nbsp;<b>100.0</b></span>
+                            
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>Week 6 : Assignment 6:</td>
+                        <td>
+                            
+                                <span id="assessment-score-Week 6 : Assignment 6">&nbsp;&nbsp;<b>100.0</b></span>
+                            
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>Week 7 : Assignment 7:</td>
+                        <td>
+                            
+                                <span id="assessment-score-Week 7 : Assignment 7">&nbsp;&nbsp;<b>100.0</b></span>
+                            
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>Week 8 : Assignment 8:</td>
+                        <td>
+                            
+                                <span id="assessment-score-Week 8 : Assignment 8">&nbsp;&nbsp;<b>100.0</b></span>
+                            
+                        </td>
+                    </tr>
+                
+            </table>
         </div>
-    </div>
-    <br><br>
+        <br><br>
     
+
     
         <button type="button" class="collapsible rowContent" data-toggle="collapse" href="#unit_wise_progress">
             Unit wise Progress
         </button>
         <div id="unit_wise_progress" class="collapse">
-            
-                <div class="cache_mesasge">
-                    <SPAN STYLE="font-size:10px"><i><b>NOTE</b>: The latest Course and Unit progress will be
-                        reflected within 24 hours.</i></SPAN>
-                </div>
             
             <table class="table_progress_unitwise">
                 <colgroup>
@@ -5718,8 +5887,8 @@ function close_popup(){
                         <td>About NPTEL</td>
                         <td>
                             
-                            <progress id="file2_128" max="100" value=100.0>100.0%</progress>
-                            <span style="font-size:3mm">100.0%</span>
+                            <progress id="file2_120" max="100" value=0.0>0.0%</progress>
+                            <span style="font-size:3mm">0.0%</span>
                             
                         </td>
                         <td>
@@ -5748,8 +5917,8 @@ function close_popup(){
                         <td>Week 0</td>
                         <td>
                             
-                            <progress id="file2_16" max="100" value=100.0>100.0%</progress>
-                            <span style="font-size:3mm">100.0%</span>
+                            <progress id="file2_16" max="100" value=0.0>0.0%</progress>
+                            <span style="font-size:3mm">0.0%</span>
                             
                         </td>
                         <td>
@@ -5763,13 +5932,13 @@ function close_popup(){
                         <td>Week 1</td>
                         <td>
                             
-                            <progress id="file2_18" max="100" value=100.0>100.0%</progress>
-                            <span style="font-size:3mm">100.0%</span>
+                            <progress id="file2_17" max="100" value=12.5>12.5%</progress>
+                            <span style="font-size:3mm">12.5%</span>
                             
                         </td>
                         <td>
                             
-                            <progress id="file_18" max="100" value=100.0>100.0%</progress>
+                            <progress id="file_17" max="100" value=100.0>100.0%</progress>
                             <span style="font-size:3mm">100.0%</span>
                             
                         </td>
@@ -5779,13 +5948,13 @@ function close_popup(){
                         <td>Week 2</td>
                         <td>
                             
-                            <progress id="file2_30" max="100" value=100.0>100.0%</progress>
-                            <span style="font-size:3mm">100.0%</span>
+                            <progress id="file2_26" max="100" value=0.0>0.0%</progress>
+                            <span style="font-size:3mm">0.0%</span>
                             
                         </td>
                         <td>
                             
-                            <progress id="file_30" max="100" value=100.0>100.0%</progress>
+                            <progress id="file_26" max="100" value=100.0>100.0%</progress>
                             <span style="font-size:3mm">100.0%</span>
                             
                         </td>
@@ -5795,13 +5964,13 @@ function close_popup(){
                         <td>Week 3</td>
                         <td>
                             
-                            <progress id="file2_41" max="100" value=100.0>100.0%</progress>
-                            <span style="font-size:3mm">100.0%</span>
+                            <progress id="file2_36" max="100" value=12.5>12.5%</progress>
+                            <span style="font-size:3mm">12.5%</span>
                             
                         </td>
                         <td>
                             
-                            <progress id="file_41" max="100" value=100.0>100.0%</progress>
+                            <progress id="file_36" max="100" value=100.0>100.0%</progress>
                             <span style="font-size:3mm">100.0%</span>
                             
                         </td>
@@ -5811,83 +5980,87 @@ function close_popup(){
                         <td>Week 4</td>
                         <td>
                             
-                            <progress id="file2_56" max="100" value=100.0>100.0%</progress>
+                            <progress id="file2_45" max="100" value=0.0>0.0%</progress>
+                            <span style="font-size:3mm">0.0%</span>
+                            
+                        </td>
+                        <td>
+                            
+                            <progress id="file_45" max="100" value=0.0>0.0%</progress>
+                            <span style="font-size:3mm">0.0%</span>
+                            
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>Week 5</td>
+                        <td>
+                            
+                            <progress id="file2_54" max="100" value=0.0>0.0%</progress>
+                            <span style="font-size:3mm">0.0%</span>
+                            
+                        </td>
+                        <td>
+                            
+                            <progress id="file_54" max="100" value=100.0>100.0%</progress>
                             <span style="font-size:3mm">100.0%</span>
                             
                         </td>
+                    </tr>
+                
+                    <tr>
+                        <td>Week 6</td>
                         <td>
                             
-                            <progress id="file_56" max="100" value=100.0>100.0%</progress>
+                            <progress id="file2_63" max="100" value=0.0>0.0%</progress>
+                            <span style="font-size:3mm">0.0%</span>
+                            
+                        </td>
+                        <td>
+                            
+                            <progress id="file_63" max="100" value=100.0>100.0%</progress>
                             <span style="font-size:3mm">100.0%</span>
                             
                         </td>
                     </tr>
                 
                     <tr>
-                        <td>Supporting material for Week 4</td>
+                        <td>Week 7</td>
                         <td>
                             
-                            <progress id="file2_69" max="100" value=0.0>0.0%</progress>
+                            <progress id="file2_72" max="100" value=0.0>0.0%</progress>
                             <span style="font-size:3mm">0.0%</span>
                             
                         </td>
                         <td>
                             
-                            <span style="align=center">-</span>
+                            <progress id="file_72" max="100" value=100.0>100.0%</progress>
+                            <span style="font-size:3mm">100.0%</span>
                             
                         </td>
                     </tr>
                 
                     <tr>
-                        <td>Download Videos</td>
+                        <td>Week 8</td>
                         <td>
                             
-                            <progress id="file2_82" max="100" value=0.0>0.0%</progress>
+                            <progress id="file2_81" max="100" value=0.0>0.0%</progress>
                             <span style="font-size:3mm">0.0%</span>
                             
                         </td>
                         <td>
                             
-                            <span style="align=center">-</span>
-                            
-                        </td>
-                    </tr>
-                
-                    <tr>
-                        <td>Books</td>
-                        <td>
-                            
-                            <progress id="file2_84" max="100" value=0.0>0.0%</progress>
+                            <progress id="file_81" max="100" value=0.0>0.0%</progress>
                             <span style="font-size:3mm">0.0%</span>
                             
                         </td>
-                        <td>
-                            
-                            <span style="align=center">-</span>
-                            
-                        </td>
                     </tr>
                 
                     <tr>
-                        <td>Text Transcripts</td>
+                        <td>DOWNLOAD VIDEOS</td>
                         <td>
                             
-                            <progress id="file2_86" max="100" value=0.0>0.0%</progress>
-                            <span style="font-size:3mm">0.0%</span>
-                            
-                        </td>
-                        <td>
-                            
-                            <span style="align=center">-</span>
-                            
-                        </td>
-                    </tr>
-                
-                    <tr>
-                        <td>Problem Solving Session - Jan 2025</td>
-                        <td>
-                            
-                            <progress id="file2_155" max="100" value=0.0>0.0%</progress>
+                            <progress id="file2_92" max="100" value=0.0>0.0%</progress>
                             <span style="font-size:3mm">0.0%</span>
                             
                         </td>
@@ -5904,57 +6077,36 @@ function close_popup(){
     
 
     
-    
-        <button type="button" class="collapsible rowContent" data-toggle="collapse" href="#assessment_wise_progress">
-            Assessment scores</button>
-        <div id="assessment_wise_progress" class="collapse">
-            <table class="assessment_wise_table">
+    <button type="button" class="collapsible rowContent" data-toggle="collapse" href="#grading_policy">
+        Grading and Certification Policy
+    </button>
+    <div id="grading_policy" class="collapse" style="padding: 0px 10px">
+        <div style="display: grid; gap: 10px;">
+
+            <div style="width: 100%;">
                 
-                    <tr>
-                        <td>Week 1 : Assignment 1:</td>
-                        <td>
-                            
-                                <span id="assessment-score-Week 1 : Assignment 1">&nbsp;&nbsp;<b>100.0</b></span>
-                            
-                        </td>
-                    </tr>
-                
-                    <tr>
-                        <td>Week 2: Assignment 2:</td>
-                        <td>
-                            
-                                <span id="assessment-score-Week 2: Assignment 2">&nbsp;&nbsp;<b>100.0</b></span>
-                            
-                        </td>
-                    </tr>
-                
-                    <tr>
-                        <td>Week 3 : Assignment 3:</td>
-                        <td>
-                            
-                                <span id="assessment-score-Week 3 : Assignment 3">&nbsp;&nbsp;<b>100.0</b></span>
-                            
-                        </td>
-                    </tr>
-                
-                    <tr>
-                        <td>Week 4 : Assignment 4:</td>
-                        <td>
-                            
-                                <span id="assessment-score-Week 4 : Assignment 4">&nbsp;&nbsp;<b>100.0</b></span>
-                            
-                        </td>
-                    </tr>
-                
-            </table>
+                <div style="float: left">
+                    
+                    <br>
+                    <div style="text-align: justify;">The course is free to enroll and learn from. But if you want a certificate, you have to register and write the proctored exam conducted by us in person at any of the designated exam centres.</div><span style="font-family: Arial;"><div style="text-align: justify;">The exam is optional for a fee of Rs 1000/- (Rupees one thousand only).</div></span><span style="font-family: Arial;"><div style="text-align: justify;">Date and Time of Exams: <b>: March 29, 2026</b><span style="font-family: arial, helvetica, clean, sans-serif; font-size: 10pt;"><span style="font-family: Arial;">&nbsp;Morning session 9am to 12 noon; Afternoon Session 2pm to 5pm.</span></span></div></span><div style="font-size: 10pt; text-align: justify;"><span style="font-family: Arial; font-size: 10pt;">Registration url: Announcements will be made when the registration form is open for registrations.</span></div><span style="font-size: 10pt; font-family: Arial;"><div style="text-align: justify;"><span style="font-size: 10pt;">The online registration form has to be filled and the certification exam fee needs to be paid. More details will be made available when the exam registration form is published. If there are any changes, it will be mentioned then.</span></div></span><span style="font-size: 10pt; font-family: Arial;"><div style="text-align: justify;"><span style="font-size: 10pt;">Please check the form for more details on the cities where the exams will be held, the conditions you agree to when you fill the form etc.</span></div></span><div style="text-align: justify;"><span style="font-size: 13.3333px;"><br></span></div><b style="font-size: 10pt; font-family: Arial;">CRITERIA TO GET A CERTIFICATE</b><br><br><span style="font-size: 10pt; font-family: Arial;">Average assignment score = 25% of average of best 6 assignments out of the total 8 assignments given in the course. </span><br><span style="font-size: 10pt; font-family: Arial;">Exam score = 75% of the proctored certification exam score out of 100</span><br><br><span style="font-size: 10pt; font-family: Arial;">Final score = Average assignment score + Exam score</span><br><br><b>Please note that assignments encompass all types (including quizzes, programming tasks, and essay submissions) available in the specific week.</b><br> <br><b style="font-size: 10pt; font-family: Arial;">YOU WILL BE ELIGIBLE FOR A CERTIFICATE ONLY IF AVERAGE ASSIGNMENT SCORE &gt;=10/25 AND EXAM SCORE &gt;= 30/75. If one of the 2 criteria is not met, you will not get the certificate even if the Final score &gt;= 40/100.</b><br><br><span style="font-size: 10pt; font-family: Arial;">Certificate will have your name, photograph and the score in the final exam with the breakup.It will have the logos of NPTEL and IIT Kharagpur .It will be e-verifiable at </span><a href="http://nptel.ac.in/noc" target="_blank" title="" style="font-size: 10pt;">nptel.ac.in/noc</a><span style="font-size: 10pt; font-family: Arial;">.</span><br><br><span style="font-size: 10pt; font-family: Arial;">Only the e-certificate will be made available. Hard copies will not be dispatched.</span><br><br><span style="font-size: 10pt; font-family: Arial;">Once again, thanks for your interest in our online courses and certification. Happy learning. </span><br><br><div style="text-align: justify;"><span style="font-family: Arial; font-size: 10pt;">- NPTEL team</span></div>
+                    
+                    <hr>
+                </div>
+            </div>
+
+            
         </div>
-        <br><br>
+    </div>
+    <br><br>
     
+
+
 
     
     
         
     
+
     <!-- Comment: Commented title below time being as it was getting irrelevant to content below it-->
     <!--    <h3 class="rowContent">Subscriptions</h3>-->
     
@@ -5962,16 +6114,220 @@ function close_popup(){
     
         
             <div class="rowContent">
-                Announcement: <br/>You are currently receiving course related emails. <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Click here to unsubscribe.</a>
+                Announcement: <br/>You are currently receiving course related emails. <a href="https://onlinecourses.nptel.ac.in/noc26_cs58/modules/unsubscribe?email=vu4f2324074%40pvppcoe.ac.in&amp;s=oVkli6F%2FexbXIc5LYZh9nbxskdwJHVRSNc2vSzZq3zg%3D">Click here to unsubscribe.</a>
             </div>
         
     
         
             <div class="rowContent">
-                Discussion forum: <br/>If you want to unsubscribe from forum <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Click here</a>
+                Discussion forum: <br/>If you want to unsubscribe from forum <a href="https://onlinecourses.nptel.ac.in/noc26_cs58/modules/unsubscribe?email=vu4f2324074%40pvppcoe.ac.in&amp;s=oVkli6F%2FexbXIc5LYZh9nbxskdwJHVRSNc2vSzZq3zg%3D&amp;action=forum">Click here</a>
             </div>
         
     
+
+    <div class="modal fade" id="feedbackModal" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content" style="border-radius: 10px; overflow: hidden;">
+                <div class="modal-header" style="background-color: rgba(0, 0, 0, 0.6); border: none; padding: 20px;">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color: white; opacity: 0.8;">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" style="color: white; font-weight: normal;">Share your feedback!</h4>
+                </div>
+                <div class="modal-body" style="padding: 20px;">
+                    <form id="feedbackForm">
+                        <div class="form-group">
+                            <label>How would you rate your overall course experience?<span style="color: red;">*</span></label>
+                            <div class="star-rating" data-field="course_experience_rating">
+                                <span class="star" data-value="1">&#9733;</span>
+                                <span class="star" data-value="2">&#9733;</span>
+                                <span class="star" data-value="3">&#9733;</span>
+                                <span class="star" data-value="4">&#9733;</span>
+                                <span class="star" data-value="5">&#9733;</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>How would you rate the support provided by the course team?<span style="color: red;">*</span></label>
+                            <div class="star-rating" data-field="course_support_rating">
+                                <span class="star" data-value="1">&#9733;</span>
+                                <span class="star" data-value="2">&#9733;</span>
+                                <span class="star" data-value="3">&#9733;</span>
+                                <span class="star" data-value="4">&#9733;</span>
+                                <span class="star" data-value="5">&#9733;</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>How would you rate the quality of course content (videos and assignments)?<span style="color: red;">*</span></label>
+                            <div class="star-rating" data-field="content_quality_rating">
+                                <span class="star" data-value="1">&#9733;</span>
+                                <span class="star" data-value="2">&#9733;</span>
+                                <span class="star" data-value="3">&#9733;</span>
+                                <span class="star" data-value="4">&#9733;</span>
+                                <span class="star" data-value="5">&#9733;</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>How would you rate your exam experience?<span style="color: red;">*</span></label>
+                            <div class="star-rating" data-field="exam_experience_rating">
+                                <span class="star" data-value="1">&#9733;</span>
+                                <span class="star" data-value="2">&#9733;</span>
+                                <span class="star" data-value="3">&#9733;</span>
+                                <span class="star" data-value="4">&#9733;</span>
+                                <span class="star" data-value="5">&#9733;</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Please share any additional comments or feedback (Optional)</label>
+                            <textarea class="form-control" id="additional_comments" rows="3" maxlength="1000" style="resize: vertical; margin-bottom: 0px;"></textarea>
+                        </div>
+                        <div style="margin: 5px 0px 0px 0px; font-size: 12px; color: #666;">
+                            <strong>Note<span style="color: red;">*</span>:</strong> Please submit this feedback to proceed with downloading your certificate or marksheet.
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer" style="border: none; padding: 0px 20px 5px;">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" style="border-radius: 5px;">Skip</button>
+                    <button type="button" class="btn btn-primary" id="submitFeedback" style="border-radius: 5px; background-color: #007bff;">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .star-rating {
+            font-size: 32px;
+            cursor: pointer;
+            margin: 10px 0;
+        }
+        .star {
+            color: #ddd;
+            transition: color 0.2s;
+        }
+        .star.selected,
+        .star:hover,
+        .star:hover ~ .star {
+            color: #f39c12;
+        }
+        .star-rating:hover .star {
+            color: #f39c12;
+        }
+        .star-rating:hover .star:hover ~ .star {
+            color: #ddd;
+        }
+    </style>
+
+    <script>
+        (function() {
+            var feedbackEnabled = true;
+            var hasFeedbackSubmitted = false;
+            var pendingDownloadUrl = null;
+            var enableDownload = false
+
+            if (!feedbackEnabled) {
+                enableDownload=true;
+            }
+
+            var ratings = {
+                course_experience_rating: 0,
+                course_support_rating: 0,
+                content_quality_rating: 0,
+                exam_experience_rating: 0
+            };
+
+            document.querySelectorAll('.star-rating').forEach(function(ratingDiv) {
+                var field = ratingDiv.getAttribute('data-field');
+                ratingDiv.querySelectorAll('.star').forEach(function(star) {
+                    star.addEventListener('click', function() {
+                        var value = parseInt(this.getAttribute('data-value'));
+                        ratings[field] = value;
+                        ratingDiv.querySelectorAll('.star').forEach(function(s) {
+                            s.classList.remove('selected');
+                        });
+                        for (var i = 0; i < value; i++) {
+                            ratingDiv.querySelectorAll('.star')[i].classList.add('selected');
+                        }
+                    });
+                });
+            });
+
+            function showFeedbackModal(downloadUrl) {
+                pendingDownloadUrl = downloadUrl;
+                var modal = document.getElementById('feedbackModal');
+                if (modal && typeof jQuery !== 'undefined') {
+                    jQuery('#feedbackModal').modal('show');
+                }
+            }
+
+            function proceedToDownload() {
+                if (pendingDownloadUrl) {
+                    window.location.href = pendingDownloadUrl;
+                    pendingDownloadUrl = null;
+                }
+            }
+
+            function handleDownloadClick(e) {
+                e.preventDefault();
+                var downloadUrl = this.getAttribute('data-url');
+                if (!downloadUrl) return;
+
+                if (hasFeedbackSubmitted || enableDownload) {
+                    window.location.href = downloadUrl;
+                } else {
+                    showFeedbackModal(downloadUrl);
+                }
+            }
+
+            var certBtn = document.getElementById('download-certificate-btn');
+            var marksheetBtn = document.getElementById('download-marksheet-btn');
+            var marksheetBtnAlt = document.getElementById('download-marksheet-btn-alt');
+
+            if (certBtn) certBtn.addEventListener('click', handleDownloadClick);
+            if (marksheetBtn) marksheetBtn.addEventListener('click', handleDownloadClick);
+            if (marksheetBtnAlt) marksheetBtnAlt.addEventListener('click', handleDownloadClick);
+
+            var submitBtn = document.getElementById('submitFeedback');
+            if (submitBtn) {
+                submitBtn.addEventListener('click', function() {
+                    if (!ratings.course_experience_rating || !ratings.course_support_rating ||
+                        !ratings.content_quality_rating || !ratings.exam_experience_rating) {
+                        alert('Please provide all ratings before submitting.');
+                        return;
+                    }
+
+                    var comments = document.getElementById('additional_comments').value;
+                    var request = {
+                        xsrf_token: '1775577810/8zO_p_ucrn9W1qa1ZNfJeIp2cwmBAKW8119GKUNP6Zk=',
+                        payload: {
+                            course_experience_rating: ratings.course_experience_rating,
+                            course_support_rating: ratings.course_support_rating,
+                            content_quality_rating: ratings.content_quality_rating,
+                            exam_experience_rating: ratings.exam_experience_rating,
+                            additional_comments: comments
+                        }
+                    };
+
+                    var xhr = new XMLHttpRequest();
+                    xhr.open('POST', '/noc26_cs58/rest/course_feedback', true);
+                    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                    xhr.onload = function() {
+                        if (xhr.status === 200) {
+                            hasFeedbackSubmitted = true;
+                            document.getElementById('additional_comments').value = '';
+                            if (typeof jQuery !== 'undefined') {
+                                jQuery('#feedbackModal').modal('hide');
+                            }
+                            setTimeout(function() {
+                                proceedToDownload();
+                            }, 300);
+                        } else {
+                            alert('Failed to submit feedback. Please try again.');
+                        }
+                    };
+                    xhr.send('request=' + encodeURIComponent(JSON.stringify(request)));
+                });
+            }
+        })();
+    </script>
 </div>
 <br/>
 
@@ -6089,5 +6445,8 @@ function close_popup(){
             $(window).scrollTop(0);
         }
     </script>
+    
+
+
   </body>
 </html>
